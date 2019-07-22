@@ -32,7 +32,7 @@ try
     auto sigma { zero };
     {
         std::stringstream ss { argv[3] };
-        ss >> epsilon;
+        ss >> sigma;
     }
 
     std::map<std::string, double> supported_prefix
@@ -54,7 +54,7 @@ try
     auto const mult_value { it->second };
 
     std::cout << "Frequency: " << frequency << " " << prefix << std::endl;
-    std::cout << "Epsilon: " << epsilon << std::endl;
+    std::cout << "Sigma: " << sigma << std::endl;
 
     formula::param_set1 const param_set { frequency * mult_value, sigma };
 
