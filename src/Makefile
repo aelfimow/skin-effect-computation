@@ -7,4 +7,4 @@ CXXFLAGS += -std=c++17
 
 all:
 	$(CXX) -c *.cpp $(CXXFLAGS)
-	$(CXX) *.o -o wavelength.exe $(CXXFLAGS)
+	$(CXX) *.o -o skin-effect.exe $(CXXFLAGS)
