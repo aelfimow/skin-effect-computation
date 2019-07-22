@@ -1,3 +1,7 @@
 src/formula.o
 src/main.o
 src/skin-effect.exe
+doc/doc.aux
+doc/doc.log
+doc/doc.pdf
+doc/doc.toc
