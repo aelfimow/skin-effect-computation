@@ -13,6 +13,7 @@ class argv_parser
         ~argv_parser();
 
         double frequency() const;
+        double frequency_factor(std::string const &prefix) const;
         std::string prefix() const;
         double sigma() const;
 
