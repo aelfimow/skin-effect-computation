@@ -10,30 +10,11 @@
 int main(int argc, char *argv[])
 try
 {
-    if (argc != 4)
-    {
-        throw std::invalid_argument("Usage: frequency prefix sigma");
-    }
+    argv_parser ap { argc, argv };
 
-    constexpr double zero { 0.0 };
-
-    auto frequency { zero };
-    {
-        std::stringstream ss { argv[1] };
-        ss >> frequency;
-    }
-
-    std::string prefix;
-    {
-        std::stringstream ss { argv[2] };
-        ss >> prefix;
-    }
-
-    auto sigma { zero };
-    {
-        std::stringstream ss { argv[3] };
-        ss >> sigma;
-    }
+    auto frequency = ap.frequency();
+    auto sigma = ap.sigma();
+    auto prefix = ap.prefix();
 
     std::map<std::string, double> supported_prefix
     {
