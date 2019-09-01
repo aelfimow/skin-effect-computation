@@ -1,10 +1,9 @@
 #include <iostream>
-#include <sstream>
 #include <cmath>
 #include <stdexcept>
-#include <map>
 
 #include "formula.h"
+#include "argv_parser.h"
 
 
 int main(int argc, char *argv[])
@@ -15,24 +14,7 @@ try
     auto frequency = ap.frequency();
     auto sigma = ap.sigma();
     auto prefix = ap.prefix();
-
-    std::map<std::string, double> supported_prefix
-    {
-        { "Hz", 1.0 },
-        { "kHz", 1.0E3 },
-        { "MHz", 1.0E6 },
-        { "GHz", 1.0E9 },
-        { "THz", 1.0E12 }
-    };
-
-    auto it { supported_prefix.find(prefix) };
-
-    if (it == supported_prefix.end())
-    {
-        throw std::runtime_error("Unsupported prefix: " + prefix);
-    }
-
-    auto const mult_value { it->second };
+    auto mult_value = ap.frequency_factor(prefix);
 
     std::cout << "Frequency: " << frequency << " " << prefix << std::endl;
     std::cout << "Sigma: " << sigma << std::endl;
