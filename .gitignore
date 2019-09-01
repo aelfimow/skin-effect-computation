@@ -1,5 +1,6 @@
 src/formula.o
 src/main.o
+src/argv_parser.o
 src/skin-effect.exe
 doc/doc.aux
 doc/doc.log
